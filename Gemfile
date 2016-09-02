@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'awesome_print', '1.7.0'
+gem 'capybara', '2.8.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '4.2.0'
 gem 'jbuilder', '~> 2.5'

@@ -23,5 +23,16 @@ module Microblog
 		# -- all .rb files in that directory are automatically loaded.
 		config.time_zone = 'Brasilia'
 		config.i18n.default_locale = :"pt-BR"
+
+		config.generators do |g|
+			g.template_engine :slim
+			g.stylesheets     false
+			g.javascripts     false
+			g.helper false
+
+			g.view_specs false
+			g.request_specs false
+			g.helper_spec false
+		end
 	end
 end
