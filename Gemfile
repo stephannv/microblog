@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'awesome_print'
+gem 'awesome_print', '1.7.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise', '4.2.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sass-rails', '~> 5.0'
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
 gem 'uglifier', '>= 1.3.0'
 
 # gem 'capistrano-rails', group: :development
@@ -16,12 +17,12 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
 	gem 'byebug', platform: :mri
 	gem 'rspec-rails', '~> 3.5'
-	gem 'factory_girl_rails'
+	gem 'factory_girl_rails', '4.7.0'
 end
 
 group :test do
 	gem 'shoulda-matchers', '~> 3.1'
-	gem 'simplecov', require: false
+	gem 'simplecov', '0.12.0', require: false
 end
 
 group :development do
