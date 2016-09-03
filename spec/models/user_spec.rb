@@ -13,4 +13,11 @@ RSpec.describe User, type: :model do
 	it{ is_expected.to validate_length_of( :username ).is_at_most(12) }
 	it{ is_expected.to validate_length_of( :bio ).is_at_most(256) }
 	it{ is_expected.to validate_length_of( :location ).is_at_most(80) }
+
+	describe "#to_param" do
+		it "return username" do
+			stephann = FactoryGirl.build :stephann
+			expect( stephann.to_param ).to eq stephann.username
+		end
+	end
 end

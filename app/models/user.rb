@@ -12,4 +12,8 @@ class User < ApplicationRecord
 	validates_length_of :username, maximum: 12
 	validates_length_of :bio, maximum: 256
 	validates_length_of :location, maximum: 80
+
+	def to_param
+		username
+	end
 end
