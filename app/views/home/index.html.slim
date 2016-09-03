@@ -1,7 +1,9 @@
 h1 MICROBLOG
 p 
-	= "Bem-vindo, #{current_user.username}, "
-	= link_to('SAIR', destroy_user_session_path, :method => :delete)
+	| Bem-vindo, 
+	= link_to current_user.username, user_path(current_user.username)
+	|,
+	=< link_to('SAIR', destroy_user_session_path, :method => :delete)
 
 = form_for :post, url: create_post_path, remote: true do |f|
 	= f.label :text, 'Create a new post:'
