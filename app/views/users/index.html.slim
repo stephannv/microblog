@@ -1,0 +1,8 @@
+- if @users.any?
+	h1 = "Resultados para a pesquisa \"#{@search}\""
+- else
+	h1 = "Nenhum resultado encontrado"
+	
+- @users.each do |user|
+	= link_to user.username, user
+	br/
