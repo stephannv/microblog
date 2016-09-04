@@ -13,6 +13,8 @@ class User < ApplicationRecord
 	validates_length_of :bio, maximum: 256
 	validates_length_of :location, maximum: 80
 
+	validates_format_of :username, with: /\A[a-zA-Z0-9_]+\Z/
+
 	def to_param
 		username
 	end

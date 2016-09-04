@@ -20,6 +20,9 @@ RSpec.describe User, type: :model do
 	it{ is_expected.to validate_length_of( :bio ).is_at_most(256) }
 	it{ is_expected.to validate_length_of( :location ).is_at_most(80) }
 
+	it { is_expected.to allow_value('stephann_').for(:username) }
+	it { is_expected.to_not allow_values('stephann.v', 'ste phann').for(:username) }
+
 	describe "#to_param" do
 		it "returns username" do
 			stephann = FactoryGirl.build :stephann
