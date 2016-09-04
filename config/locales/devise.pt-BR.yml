@@ -4,6 +4,13 @@
 # Em 'config/application.rb', utilize => config.i18n.default_locale = :'pt-BR'
 
 pt-BR:
+  activerecord:
+    attributes:
+      user:
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        email: 'E-mail'
+        username: 'Username'
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso."

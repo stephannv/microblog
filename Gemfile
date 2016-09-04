@@ -13,7 +13,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'slim-rails', '3.1.1'
 gem 'uglifier', '>= 1.3.0'
 
-# gem 'capistrano-rails', group: :development
+# BOWER PACKAGES
+source 'https://rails-assets.org' do
+  gem 'rails-assets-semantic-ui'
+end
+
 
 group :development, :test do
 	gem 'byebug', platform: :mri
@@ -34,3 +38,5 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# gem 'capistrano-rails', group: :development
