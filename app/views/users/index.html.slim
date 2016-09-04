@@ -6,7 +6,7 @@
 - @users.each do |user|
 	= link_to user.username, user
 	- if current_user.follow? user
-		=< link_to 'Deixar de seguir', unfollow_user_path( user ), method: :delete
+		=< link_to 'Deixar de seguir', unfollow_user_path( user ), method: :delete, remote: true
 	- else 
-		=< link_to 'Seguir', follow_user_path( user ), method: :post
+		=< link_to 'Seguir', follow_user_path( user ), method: :post, remote: true
 	br/

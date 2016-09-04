@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'users/show'
-
 	root 'home#index'
 
 	get '/', to: 'home#index', as: :home

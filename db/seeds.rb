@@ -16,7 +16,7 @@
 	},
 	{
 		username: 'demogorgon',
-		email: 'Demogorgon@outlook.com',
+		email: 'demogorgon@outlook.com',
 		location: 'Mundo invertido',
 		bio: "I love will",
 		password: 'upsidedown'

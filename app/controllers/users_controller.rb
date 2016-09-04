@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
 	def follow
 		if current_user.follow( @user )
+			send_new_follower_notification @user
 			head :created
 		else
 			head :unprocessable_entity
@@ -27,5 +28,9 @@ class UsersController < ApplicationController
 	private
 	def set_user
 		@user = User.find_by( username: params[:username] )
+	end
+
+	def send_new_follower_notification followable
+		NewFollowerNotificationChannel.broadcast_to( followable, username: current_user.username )
 	end
 end
