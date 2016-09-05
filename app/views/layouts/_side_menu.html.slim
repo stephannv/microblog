@@ -1,0 +1,24 @@
+.ui.vertical.large.menu.four.wide.column
+	= link_to user_path( current_user ), class: 'item' do
+		img.ui.avatar.image( src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150×150&w=150&h=150" )
+		= current_user.username
+	
+	.item
+		= form_tag users_path, method: :get do 
+			.ui.transparent.icon.input
+				= text_field_tag 'user_search', '',  maxlength: 12, placeholder: 'Pesquisar usuários'
+				i.search.icon
+			
+			= submit_tag 'Buscar', style: 'position: absolute; left: -9999px; width: 1px; height: 1px;'
+
+	= link_to 'Timeline', home_path, class: 'item'
+	
+	= link_to followers_path( current_user ), class: 'item' do
+		| Seguidores
+		.ui.left.label = current_user.all_followers.size
+	
+	= link_to following_path( current_user ), class: 'item' do
+		| Seguindo
+		.ui.left.label = current_user.all_followings.size
+	
+	= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'item'

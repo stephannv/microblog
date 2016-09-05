@@ -1,0 +1,6 @@
+- if @users.any?
+	h1 = "Resultados para a pesquisa \"#{@search}\"."
+- else
+	h1 = "Nenhum resultado encontrado."
+	
+= render 'users/list', users: @users
