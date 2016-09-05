@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.feature "Search users", type: :feature do
-	scenario "with valid search" do
+RSpec.feature "Create post", type: :feature do
+	scenario "with valid text" do
 		stephann = FactoryGirl.create(:stephann)
 
 		login_as( stephann, scope: :user )
