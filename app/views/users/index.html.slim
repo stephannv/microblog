@@ -1,12 +1,6 @@
 - if @users.any?
-	h1 = "Resultados para a pesquisa \"#{@search}\""
+	h1 = "Resultados para a pesquisa \"#{@search}\"."
 - else
-	h1 = "Nenhum resultado encontrado"
+	h1 = "Nenhum resultado encontrado."
 	
-- @users.each do |user|
-	= link_to user.username, user
-	- if current_user.follow? user
-		=< link_to 'Deixar de seguir', unfollow_user_path( user ), method: :delete, remote: true
-	- else 
-		=< link_to 'Seguir', follow_user_path( user ), method: :post, remote: true
-	br/
+= render 'users/list', users: @users

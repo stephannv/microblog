@@ -45,4 +45,8 @@ class User < ApplicationRecord
 	def followed_by? user
 		self.all_followers.include? user
 	end
+
+	def timeline_posts
+		Post.where( user_id: all_followings.pluck(:id) << self.id ).order( 'created_at DESC' )
+	end
 end

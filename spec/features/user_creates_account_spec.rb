@@ -9,7 +9,7 @@ RSpec.feature "User creates account", type: :feature do
 		fill_in 'user_password', with: 'postgres'
 		fill_in 'user_password_confirmation', with: 'postgres'
 
-		click_button 'Sign up'
+		click_button 'Criar conta'
 
 		expect(page).to have_current_path( root_path )
 	end

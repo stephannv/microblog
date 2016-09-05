@@ -1,19 +1,16 @@
-h1 MICROBLOG
-p 
-	| Bem-vindo, 
-	= link_to current_user.username, user_path(current_user.username)
-	|,
-	=< link_to('SAIR', destroy_user_session_path, :method => :delete)
-
-= form_for :post, url: create_post_path, remote: true do |f|
-	= f.label :text, 'Crie um novo post:'
-	br/
-	= f.text_area :text
-	br/
-	= f.submit
+= form_for :post, url: create_post_path, html: { class: 'ui form twelve wide error' } do |f|
+	- if flash.alert
+		.ui.error.message
+			p = flash.alert
+				
+	.field
+		= f.text_area :text, rows: 4, maxlength: 256, placeholder: 'Publique o que você está pensando agora...'
 	
-br/
+	.field.right.aligned
+		= f.submit 'Postar', class: 'ui right floated purple button'
 
-= form_tag users_path, method: :get do 
-	= text_field_tag 'user_search', '',  maxlength: 12, placeholder: 'Pesquisar pelo nome'
-	= submit_tag 'Pesquisar'
+br
+
+h1 Publicações recentes
+
+= render 'posts/list', posts: current_user.timeline_posts

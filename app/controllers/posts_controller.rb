@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
 	def create
-		@post = current_user.posts.new( post_params )
+		post = current_user.posts.new( post_params )
 
-		if @post.save
-			render json: @post, status: :created
-		else
-			render json: @post.errors, status: :unprocessable_entity
+		unless post.save
+			@alert = 'Ocorreu um erro'
 		end
+
+		redirect_to root_path, alert: @alert
 	end
 
 	private

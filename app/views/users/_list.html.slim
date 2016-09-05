@@ -1,0 +1,21 @@
+.ui.two.doubling.cards
+	- users.each do |user|
+		.ui.card
+			= link_to user, class: 'image' do
+				img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150×150&w=150&h=150"
+			
+			.content
+				= link_to user.username, user, class: 'header'
+				.meta
+					= link_to user.location, user
+			
+			- if current_user.follow? user
+				= link_to 'Deixar de seguir', '#', remote: true, 
+					data: { user: user.username },
+					class: 'ui botton attached button unfollow-button'
+					
+			- else 
+				= link_to 'Seguir', '#', remote: true,
+					id: "seguir-#{user.username}",
+					data: { user: user.username },
+					class: 'ui bottom attached purple button follow-button'

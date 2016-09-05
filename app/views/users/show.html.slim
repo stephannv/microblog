@@ -1,4 +1,29 @@
-h1 = @user.username
+.ui.segment
+	.ui.link.items
+		.item
+			.ui.tiny.circular.image
+				img( src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150×150&w=150&h=150" )
 
-- @user.posts.each do |post|
-	p = post.text
+			.content
+				.header = @user.username
+				.meta
+					span = @user.location || "Fortaleza, Brazil"
+					
+				.extra = @user.bio || "BIO AINDA POR FAZER"
+
+- if current_user == @user
+	= link_to 'Atualizar perfil', edit_user_registration_path, class: 'ui right floated purple button'
+- else 
+	- if current_user.follow? @user
+		= link_to 'Deixar de seguir', '#', data: { user: @user.username }, 
+			remote: true, 
+			class: 'ui right floated button unfollow-button'
+			
+	- else 
+		= link_to 'Seguir', '#', data: { user: @user.username },
+			class: 'ui right floated purple button follow-button'
+
+br
+
+h2 Publicações
+= render 'posts/list', posts: @user.posts.order('created_at DESC')

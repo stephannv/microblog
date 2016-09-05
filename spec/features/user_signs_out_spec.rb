@@ -7,7 +7,7 @@ RSpec.feature "User sign out", type: :feature do
 
 		visit "/"
 
-		click_on 'SAIR'
+		click_on 'Sair'
 
 		expect(page).to have_current_path( new_user_session_path )
 	end

@@ -1,3 +1,5 @@
 App.cable.subscriptions.create "NewFollowerNotificationChannel",
 	received: (data) ->
-		console.log( data )
+		alertify.notify(
+			'<a href="/users/underwood/profile">underwood seguiu você</a>', 'purple', 10
+		);
