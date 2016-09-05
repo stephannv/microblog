@@ -1,24 +1,19 @@
-# README
+# MICROBLOG
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tecnologias utilizadas no projetoÇ
 
-Things you may want to cover:
+* Ruby 2.3.0
 
-* Ruby version
+* Rails 5.0.0.1
 
-* System dependencies
+* Action Cable
 
-* Configuration
+* Rspec
 
-* Database creation
+* Capybara
 
-* Database initialization
+* Factory Girl
 
-* How to run the test suite
+* Shoulda-matchers
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Simplecov
