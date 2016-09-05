@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title Microblog
+		meta( name='viewport' content='width=device-width, initial-scale=1' )
+		
+		= csrf_meta_tags
+
+		= stylesheet_link_tag 'application', media: 'all'
+		= javascript_include_tag 'application'
+
+	body
+		.ui.top.fixed.purple.inverted.menu
+			.item Microblog
+	
+		.ui.main.container
+			.ui.two.stackable.column.centered.grid
+				.twelve.wide.mobile.twelve.wide.tablet.four.wide.computer.column
+					= render 'layouts/side_menu'
+				.twelve.wide.mobile.twelve.wide.tablet.eight.wide.computer.column
+					= yield

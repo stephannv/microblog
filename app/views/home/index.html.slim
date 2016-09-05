@@ -1,0 +1,16 @@
+= form_for :post, url: create_post_path, html: { class: 'ui form twelve wide error' } do |f|
+	- if flash.alert
+		.ui.error.message
+			p = flash.alert
+				
+	.field
+		= f.text_area :text, rows: 4, maxlength: 256, placeholder: 'Publique o que você está pensando agora...'
+	
+	.field.right.aligned
+		= f.submit 'Postar', class: 'ui right floated purple button'
+
+br
+
+h1 Publicações recentes
+
+= render 'posts/list', posts: current_user.timeline_posts

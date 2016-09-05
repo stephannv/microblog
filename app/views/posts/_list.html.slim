@@ -1,0 +1,11 @@
+- posts.each do |post| 
+	.ui.segment
+		.ui.comments
+			.comment
+				a.avatar
+					img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150×150&w=150&h=150"
+				.content
+					= link_to post.user.username, post.user, class: 'author'
+					.metadata
+						.date = "Há #{distance_of_time_in_words_to_now( post.created_at )}" 
+					.text = post.text
