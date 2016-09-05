@@ -1,5 +1,6 @@
 App.cable.subscriptions.create "NewFollowerNotificationChannel",
 	received: (data) ->
 		alertify.notify(
-			'<a href="/users/underwood/profile">underwood seguiu você</a>', 'purple', 10
+			'<a href="/users/'+ data['username']+'/profile">'+ data['username']+' seguiu você</a>',
+			'purple', 10
 		);
