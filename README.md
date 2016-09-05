@@ -6,6 +6,9 @@ Tecnologias utilizadas no projetoÇ
 
 * Rails 5.0.0.1
 
+* Semantic-UI
+
+
 * Action Cable
 
 * Rspec
