@@ -12,35 +12,28 @@
 		email: 'walterwhite@bol.com.br',
 		location: 'Albuquerque',
 		bio: "I'm the danger",
-		password: 'metafetamina'
+		password: 'teste123'
 	},
 	{
 		username: 'underwood',
 		email: 'francis@gov.us',
 		location: 'Washington, DC',
 		bio: "God bless America",
-		password: 'meechum'
-	},
-	{
-		username: 'demogorgon',
-		email: 'demogorgon@outlook.com',
-		location: 'Mundo invertido',
-		bio: "I love will",
-		password: 'upsidedown'
+		password: 'teste123'
 	},
 	{
 		username: 'saulgoodman',
 		email: 'saul@goodman.com',
 		location: 'Albuquerque',
 		bio: "Better Call Saul",
-		password: 'saulgoodman'
+		password: 'teste123'
 	},
 	{
 		username: 'michaelscott',
 		email: 'scott@dundermifflin.com',
 		location: 'Scranton',
 		bio: "NO, NO, NO",
-		password: 'hollyflax'
+		password: 'teste123'
 	},
 ].each do |user|
 	User.create! user
@@ -58,3 +51,27 @@ underwood.posts.create( text: "I have zero tolerance for betrayal, which they wi
 underwood.posts.create( text: "The road to power is paved with hypocrisy, and casualties. Never regret.", created_at: 3.days.ago )
 underwood.posts.create( text: "Shake with your right hand, but hold a rock in the left.", created_at: 1.day.ago )
 underwood.posts.create( text: "If you don’t like how the table is set, turn over the table." )
+
+saulgoodman = User.find_by( username: 'saulgoodman' )
+saulgoodman.posts.create( text: "There's no honor among thieves... except for us of course.", created_at: 1.month.ago )
+saulgoodman.posts.create( text: "He said he was gonna break my legs, and don't tell me he didn't mean it because he gave me the dead mackerel eyes.", created_at: 4.days.ago )
+saulgoodman.posts.create( text: "Some people are immune to good advice.", created_at: 1.day.ago )
+saulgoodman.posts.create( text: "Don't drink and drive. But if you do, call me." )
+
+michaelscott = User.find_by( username: 'michaelscott' )
+michaelscott.posts.create( text: "Make friends first, make sales second, make love third. In no particular order.", created_at: 3.days.ago )
+michaelscott.posts.create( text: "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me.", created_at: 2.days.ago )
+michaelscott.posts.create( text: "You need to play to win. But you also have to win to play.", created_at: 10.hours.ago )
+michaelscott.posts.create( text: "The people that you work with are, when you get down to it, your very best friends." )
+
+walt.follow( underwood )
+walt.follow( michaelscott )
+
+michaelscott.follow( walt )
+
+underwood.follow( michaelscott )
+underwood.follow( saulgoodman )
+
+saulgoodman.follow( underwood )
+saulgoodman.follow( michaelscott )
+saulgoodman.follow( walt )
