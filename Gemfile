@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'alertifyjs-rails', '1.8.0'
 gem 'awesome_print', '1.7.0'
 gem 'capybara', '2.8.1'
 gem 'coffee-rails', '~> 4.2'

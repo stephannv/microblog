@@ -145,4 +145,30 @@ RSpec.describe User, type: :model do
 			end
 		end
 	end
+
+	describe '#timeline_posts' do
+		before do
+			@stephann = FactoryGirl.create :stephann
+			@walt = FactoryGirl.create :heisenberg
+			@underwood = FactoryGirl.create :underwood
+
+			FactoryGirl.create( :post, user: @stephann )
+			FactoryGirl.create( :post, user: @walt )
+			FactoryGirl.create( :post, user: @underwood )
+
+			@stephann.follow( @walt )
+		end
+
+		it 'returns following posts' do
+			expect( @stephann.timeline_posts ).to include( *@walt.posts )
+		end
+
+		it 'returns his own posts' do
+			expect( @stephann.timeline_posts ).to include( *@stephann.posts )
+		end
+
+		it "doesn't return posts from user who aren't followed by self" do
+			expect( @stephann.timeline_posts ).to_not include( *@underwood.posts )
+		end
+	end
 end

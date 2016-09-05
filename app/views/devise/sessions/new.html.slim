@@ -2,7 +2,11 @@
 	.six.wide.computer.ten.wide.tablet.twelve.wide.mobile.column.devise-form-column
 		h2.center.aligned.header Entrar
 		= form_for(resource, as: resource_name, url: session_path(resource_name), 
-			html: { class: 'ui form' } ) do |f|
+			html: { class: 'ui form error' } ) do |f|
+			
+			.ui.error.message
+				span = flash.alert
+				
 			.field
 				= f.email_field :email, autofocus: true, placeholder: 'E-mail'
 

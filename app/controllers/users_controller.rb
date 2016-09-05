@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :follow, :unfollow]
+	before_action :set_user, except: :index
 	def index
 		@search = params['user_search']
 		@users = User.where.not( id: current_user.id ).where( 'username ILIKE ?', "%#{@search}%")
@@ -23,6 +23,14 @@ class UsersController < ApplicationController
 		else
 			head :unprocessable_entity
 		end
+	end
+
+	def followers
+		@followers = @user.all_followers
+	end
+
+	def following
+		@following = @user.all_followings
 	end
 
 	private

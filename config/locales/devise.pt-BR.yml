@@ -11,6 +11,7 @@ pt-BR:
         password_confirmation: 'Confirmação de senha'
         email: 'E-mail'
         username: 'Username'
+        current_password: 'Senha atual'
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso."

@@ -14,4 +14,12 @@ FactoryGirl.define do
 		location 'Albuquerque'
 		password 'metafetamina'
 	end
+
+	factory :underwood, class: User do
+		username 'underwood'
+		email 'underwood@gov.us'
+		bio 'God Bless America'
+		location 'Washington, DC'
+		password 'meechum'
+	end
 end

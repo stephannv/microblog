@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 	get '/users', to: 'users#index', as: :users
 	post '/users/:username/follow', to: 'users#follow', as: :follow_user
 	delete '/users/:username/unfollow', to: 'users#unfollow', as: :unfollow_user
+	get '/users/:username/followers', to: 'users#followers', as: :followers
+	get '/users/:username/following', to: 'users#following', as: :following
 
 	devise_for :users
 end

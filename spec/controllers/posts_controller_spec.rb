@@ -21,14 +21,13 @@ RSpec.describe PostsController, type: :controller do
 				}.to change( controller.current_user.posts, :count ).by( 1 )
 			end
 
-			it "render new post in json format" do
-				post :create, params: { post: valid_attributes }
-				expect( response.body ).to eq Post.last.to_json
+			it "doesn't set flash error message" do
+				is_expected.to_not set_flash[:alert]
 			end
 
-			it "respond with :created status" do
+			it "redirects to root path" do
 				post :create, params: { post: valid_attributes }
-				is_expected.to respond_with :created
+				is_expected.to redirect_to root_path
 			end
 		end
 
@@ -39,14 +38,14 @@ RSpec.describe PostsController, type: :controller do
 				}.to_not change( Post, :count )
 			end
 
-			it "render post errors " do
+			it "set flash error message" do
 				post :create, params: { post: invalid_attributes }
-				expect( response.body ).to eq( { text: ['não pode ficar em branco'] }.to_json )
+				is_expected.to set_flash[:alert].to('Ocorreu um erro')
 			end
 
-			it "respond with :unprocessable_entity status" do
+			it "redirects to root path" do
 				post :create, params: { post: invalid_attributes }
-				is_expected.to respond_with :unprocessable_entity
+				is_expected.to redirect_to root_path
 			end
 		end
 	end

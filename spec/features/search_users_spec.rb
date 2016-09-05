@@ -10,7 +10,7 @@ RSpec.feature "Search users", type: :feature do
 		visit "/"
 
 		fill_in 'user_search', with: 'wa'
-		click_button 'Pesquisar'
+		click_on 'Buscar'
 
 		expect(page).to have_current_path( users_path, only_path: true )
 		expect(page).to have_content( walt.username )

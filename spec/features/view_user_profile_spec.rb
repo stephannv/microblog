@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.feature "View user profile", type: :feature do
-	scenario "view user's posts" do
+RSpec.feature "View user's posts", type: :feature do
+	scenario "view posts" do
 		stephann = FactoryGirl.create(:stephann)
 		post = FactoryGirl.create( :post )
 

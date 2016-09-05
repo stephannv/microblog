@@ -1,3 +1,17 @@
 body{
 	background-color: #F5F5F5
 }
+
+.main.container{
+	padding-top: 7em;
+}
+
+.ajs-message.ajs-purple {
+	background-color: #A333C8;
+	border-color: #A333C8;
+	color: #FFFFFF;
+}
+
+.ajs-message.ajs-purple a {
+	color: #FFFFFF;
+}
