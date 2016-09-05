@@ -4,8 +4,9 @@
 		= form_for(resource, as: resource_name, url: session_path(resource_name), 
 			html: { class: 'ui form error' } ) do |f|
 			
-			.ui.error.message
-				span = flash.alert
+			- if flash.alert
+				.ui.error.message
+					span = flash.alert
 				
 			.field
 				= f.email_field :email, autofocus: true, placeholder: 'E-mail'

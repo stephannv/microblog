@@ -7,9 +7,9 @@
 			.content
 				.header = @user.username
 				.meta
-					span = @user.location || "Fortaleza, Brazil"
+					span = @user.location
 					
-				.extra = @user.bio || "BIO AINDA POR FAZER"
+				.extra = @user.bio
 
 - if current_user == @user
 	= link_to 'Atualizar perfil', edit_user_registration_path, class: 'ui right floated purple button'
