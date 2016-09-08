@@ -1,6 +1,6 @@
 # MICROBLOG
 
-Tecnologias utilizadas no projetoÇ
+Tecnologias utilizadas no projeto:
 
 * Ruby 2.3.0
 
@@ -8,6 +8,7 @@ Tecnologias utilizadas no projetoÇ
 
 * Semantic-UI
 
+* Slim templates
 
 * Action Cable
 
